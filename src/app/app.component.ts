@@ -7,18 +7,10 @@ import { Component, Input } from '@angular/core';
 })
 export class AppComponent {
   
-  showRecipes = true;
-  showShoppingList = true;
+  loadedFeature = 'recipe';
 
-  receivedRecipesEmit(ev){
-    console.log('receivedRecipesEmit()' + ev);
-    this.showRecipes = true;
-    this.showShoppingList = false;
+  onNavigate(feature: string){
+    this.loadedFeature = feature;
   }
-  receivedShoppingListEmit(ev){
-    console.log('receivedShoppingListEmit()' + ev);
-    this.showRecipes = false;
-    this.showShoppingList = true;
-  }  
 
 }

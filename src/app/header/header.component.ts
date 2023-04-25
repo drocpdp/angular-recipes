@@ -8,16 +8,10 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class HeaderComponent {
   collapsed=true;
 
-  @Output() emitRecipesClick = new EventEmitter<boolean>;
-  @Output() emitShoppingListClick = new EventEmitter<boolean>;
+  @Output() featureSelected = new EventEmitter<string>();
 
-  onClickRecipes(){
-    console.log('onClickRecipes()');
-    this.emitRecipesClick.emit(true);
-  }
-  onClickShoppingList(){
-    console.log('onClickShoppingList()');
-    this.emitShoppingListClick.emit(true);
+  onSelect(feature: string){
+    this.featureSelected.emit(feature);
   }
 
 }
